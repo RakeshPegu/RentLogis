@@ -18,7 +18,7 @@ export function HeroSection() {
             </h1>
 
             {/* Supporting Copy */}
-            <p className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-2xl font-normal">
+            <p className="text-base sm:text-xl text-white md:text-gray-300 leading-relaxed max-w-2xl font-normal">
               Rent heavy-duty excavators, compact track loaders, articulated boom lifts, and mobile site generators. 
               Get transparent commercial rates, guaranteed pre-hire maintenance, and responsive site delivery across regional jobsites.
             </p>
