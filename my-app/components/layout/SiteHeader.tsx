@@ -66,7 +66,9 @@ export function SiteHeader() {
           </div>
 
           {/* Mobile menu trigger */}
+          
           <MobileNavigation navLinks={navLinks} />
+          
         </div>
       </div>
     </header>
