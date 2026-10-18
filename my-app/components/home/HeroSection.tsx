@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 export function HeroSection() {
   return (
-    <section className="relative h-min-screen lg:-top-18 w-full backdrop-opacity-100  bg-[url('@/public/images/bg-excavator.jpg')] bg-cover  bg-center bg-no-repeat border-b border-stone-200 overflow-hidden">
+    <section className="relative h-min-screen lg:-top-18 w-full backdrop-opacity-300  bg-[url('@/public/images/bg-excavator.jpg')] bg-cover  bg-center bg-no-repeat border-b border-stone-200 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12  lg:my-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
@@ -18,7 +18,7 @@ export function HeroSection() {
             </h1>
 
             {/* Supporting Copy */}
-            <p className="text-base sm:text-xl text-white md:text-gray-300 leading-relaxed max-w-2xl font-normal">
+            <p className="text-base sm:text-xl text-white leading-relaxed max-w-2xl font-normal">
               Rent heavy-duty excavators, compact track loaders, articulated boom lifts, and mobile site generators. 
               Get transparent commercial rates, guaranteed pre-hire maintenance, and responsive site delivery across regional jobsites.
             </p>

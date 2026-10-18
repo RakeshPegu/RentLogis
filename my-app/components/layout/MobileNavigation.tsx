@@ -7,7 +7,6 @@ import {createPortal} from 'react-dom'
 interface MobileNavigationProps {
   navLinks: { label: string; href: string }[];
 }
-
 export function MobileNavigation({ navLinks }: MobileNavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
 

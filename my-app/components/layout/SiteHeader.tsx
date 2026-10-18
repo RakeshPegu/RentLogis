@@ -23,7 +23,7 @@ export function SiteHeader() {
               <span className="font-extrabold text-xl sm:text-2xl tracking-tight text-stone-900 leading-none">
                 Rent<span className="text-amber-600">Logis</span>
               </span>
-              <span className="text-[10px] font-semibold uppercase tracking-wider text-stone-500 mt-0.5">
+              <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-300 mt-0.5">
                 Equipment Fleet
               </span>
             </div>
@@ -35,7 +35,7 @@ export function SiteHeader() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-3 py-1.5 rounded-md text-gray-950 hover:text-stone-950 hover:bg-stone-100 transition-colors"
+                className="px-3 py-1.5 rounded-md text-amber-600 hover:text-stone-950 hover:bg-stone-100 transition-colors"
               >
                 {link.label}
               </Link>
