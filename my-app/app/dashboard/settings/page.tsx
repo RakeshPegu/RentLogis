@@ -36,6 +36,7 @@ import {
   Webhook,
   KeyRound,
   Link2,
+  LogOut,
   X,
 } from "lucide-react";
 
@@ -647,88 +648,140 @@ export default function SettingsPage() {
     );
   }
 
-  function renderAccount() {
-    return (
-      <>
-        <SectionHeading
-          title="My account"
-          description="Manage your personal profile and sign-in details."
-        />
+  
+function renderAccount() {
+  return (
+    <>
+      <SectionHeading
+        title="My account"
+        description="Manage your personal profile and sign-in details."
+      />
 
-        <FormSection title="Personal information">
-          <div className="flex items-center gap-4">
-            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#e5ede7] text-lg font-semibold text-[#244b3b]">
-              {account.name
-                .split(" ")
-                .map((part) => part[0])
-                .join("")
-                .slice(0, 2)}
-            </div>
-            <div>
-              <p className="font-semibold text-stone-900">{account.name}</p>
-              <p className="mt-1 text-xs text-stone-500">{account.role}</p>
-            </div>
+      <FormSection title="Personal information">
+        <div className="flex items-center gap-4">
+          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#e5ede7] text-lg font-semibold text-[#244b3b]">
+            {account.name
+              .split(" ")
+              .map((part) => part[0])
+              .join("")
+              .slice(0, 2)}
           </div>
-          <div className="mt-5 grid gap-4 sm:grid-cols-2">
-            <Field
-              label="Full name"
-              value={account.name}
-              onChange={(v) => updateAccount("name", v)}
-            />
-            <Field
-              label="Email address"
-              type="email"
-              value={account.email}
-              onChange={(v) => updateAccount("email", v)}
-            />
-            <Field
-              label="Phone number"
-              value={account.phone}
-              onChange={(v) => updateAccount("phone", v)}
-            />
-            <Field
-              label="Workspace role"
-              value={account.role}
-              onChange={() => {}}
-              hint="Your role is controlled by workspace permissions."
-            />
-          </div>
-        </FormSection>
 
-        <FormSection title="Password & authentication">
-          <p className="mb-3 text-xs text-stone-500">
-            Password changes should be handled by your authentication provider.
-          </p>
-          <div className="relative">
-            <input
-              type={showPassword ? "text" : "password"}
-              value="demo-password-not-real"
-              readOnly
-              className="h-10 w-full rounded-lg border border-stone-200 bg-stone-50 px-3 pr-11 text-sm"
-            />
-            <button
-              type="button"
-              onClick={() => setShowPassword((value) => !value)}
-              aria-label={showPassword ? "Hide password" : "Show password"}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400"
-            >
-              {showPassword ? (
-                <EyeOff className="h-4 w-4" />
-              ) : (
-                <Eye className="h-4 w-4" />
-              )}
-            </button>
+          <div>
+            <p className="font-semibold text-stone-900">
+              {account.name}
+            </p>
+            <p className="mt-1 text-xs text-stone-500">
+              {account.role}
+            </p>
           </div>
+        </div>
+
+        <div className="mt-5 grid gap-4 sm:grid-cols-2">
+          <Field
+            label="Full name"
+            value={account.name}
+            onChange={(v) => updateAccount("name", v)}
+          />
+
+          <Field
+            label="Email address"
+            type="email"
+            value={account.email}
+            onChange={(v) => updateAccount("email", v)}
+          />
+
+          <Field
+            label="Phone number"
+            value={account.phone}
+            onChange={(v) => updateAccount("phone", v)}
+          />
+
+          <Field
+            label="Workspace role"
+            value={account.role}
+            onChange={() => {}}
+            hint="Your role is controlled by workspace permissions."
+          />
+        </div>
+      </FormSection>
+
+      <FormSection title="Password & authentication">
+        <p className="mb-3 text-xs text-stone-500">
+          Password changes should be handled by your authentication
+          provider.
+        </p>
+
+        <div className="relative">
+          <input
+            type={showPassword ? "text" : "password"}
+            value="demo-password-not-real"
+            readOnly
+            className="h-10 w-full rounded-lg border border-stone-200 bg-stone-50 px-3 pr-11 text-sm"
+          />
+
           <button
+            type="button"
+            onClick={() => setShowPassword((value) => !value)}
+            aria-label={showPassword ? "Hide password" : "Show password"}
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400"
+          >
+            {showPassword ? (
+              <EyeOff className="h-4 w-4" />
+            ) : (
+              <Eye className="h-4 w-4" />
+            )}
+          </button>
+        </div>
+
+        <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          {/* Left side: Change password */}
+          <button
+            type="button"
             disabled
-            className="mt-3 rounded-lg border border-stone-200 px-3 py-2 text-sm text-stone-400"
+            className="self-start rounded-lg border border-stone-200 px-3 py-2 text-sm text-stone-400"
           >
             Change password
           </button>
-        </FormSection>
-      </>
-    );
-  }
+
+          {/* Right side: Account actions */}
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              type="button"
+              onClick={() => {
+                window.location.href = "/login";
+              }}
+              className="inline-flex items-center gap-2 rounded-lg border border-stone-200 px-3 py-2 text-sm font-medium text-stone-600 transition hover:bg-stone-50"
+            >
+              <LogOut className="h-4 w-4" />
+              Log out
+            </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                const confirmed = window.confirm(
+                  "Are you sure you want to delete your account? This action may permanently delete your account and associated data."
+                );
+
+                if (confirmed) {
+                  window.alert(
+                    "Account deletion is not connected yet. Connect this action to your account deletion API."
+                  );
+                }
+              }}
+              className="inline-flex items-center gap-2 rounded-lg border border-red-200 px-3 py-2 text-sm font-medium text-red-600 transition hover:bg-red-50"
+            >
+              <Trash2 className="h-4 w-4" />
+              Delete account
+            </button>
+          </div>
+        </div>
+      </FormSection>
+    </>
+  );
+}
+
 
   function renderTeam() {
     return (
