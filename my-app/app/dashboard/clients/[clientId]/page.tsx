@@ -278,6 +278,7 @@ function SummaryCard({
   );
 }
 
+
 export default function ClientDetailsPage() {
   const params = useParams<{ clientId: string }>();
   const clientId = params.clientId;
