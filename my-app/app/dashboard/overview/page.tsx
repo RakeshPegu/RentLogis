@@ -523,7 +523,7 @@ export default function OverviewPage() {
             description="Deliveries, pickups and expected returns"
             action={
               <Link
-                href="/dashboard/rentals/tracking"
+                href="/dashboard/rentals"
                 className="inline-flex items-center gap-1 text-sm font-semibold text-[#435b40] hover:underline"
               >
                 View rentals <ArrowRight size={14} />

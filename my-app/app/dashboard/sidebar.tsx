@@ -109,13 +109,6 @@ export default function Sidebar() {
           </div>
         </div>
 
-        <button
-          type="button"
-          className="flex h-10 w-full items-center gap-3 rounded-md px-3 text-[13px] font-medium text-stone-600 transition-colors hover:bg-red-50 hover:text-red-700"
-        >
-          <LogOut size={17} className="shrink-0" />
-          Sign out
-        </button>
       </div>
     </aside>
   );
