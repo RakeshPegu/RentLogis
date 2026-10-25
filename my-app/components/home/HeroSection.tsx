@@ -4,7 +4,7 @@ export function HeroSection() {
   return (
     <section className="relative bottom-10 isolate min-h-screen w-full overflow-hidden border-b border-stone-200" >
       <Image
-        src="/images/bg-excavator.jpg"
+        src="/images/bg-excavator.webp"
         alt="background image of excavator for the hero section"
         fill
         sizes="100vw"
