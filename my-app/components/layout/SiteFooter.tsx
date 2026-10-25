@@ -12,7 +12,7 @@ export function SiteFooter() {
                 <span>RL</span>
               </div>
               <span className="font-extrabold text-xl tracking-tight text-white">
-                Rent<span className="text-amber-500">Logi</span>
+                Rent<span className="text-amber-500">Logis</span>
               </span>
             </Link>
             <p className="text-stone-400 text-sm leading-relaxed max-w-sm">

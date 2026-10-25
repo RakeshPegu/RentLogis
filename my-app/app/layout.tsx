@@ -27,6 +27,21 @@ export const metadata: Metadata = {
     "generator rental",
     "construction equipment",
   ],
+  openGraph: {
+    title:"RentLogis",
+    description: "Explore heavy excavators, compact track loaders, aerial work platforms, and mobile power generators. Request fast commercial rental quotes with verified fleet availability.",
+    url:"https://rent-logis.vercel.app/",
+    siteName:"RentLogis",
+    images:[
+      {
+        url:'/og-image.png',
+        width:1200,
+        height:630,
+        alt:'RentLogis site home page'
+      }
+    ],
+    type:'website'
+  }
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
