@@ -41,6 +41,13 @@ export const metadata: Metadata = {
       }
     ],
     type:'website'
+    
+  },
+  twitter:{
+    card:"summary_large_image",
+    title:"RentLogis",
+    description:"Explore heavy excavators, compact track loaders, aerial work platforms, and mobile power generators. Request fast commercial rental quotes with verified fleet availability.",
+    images:['/og-image.jpg']
   }
 };
 
