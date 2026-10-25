@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://rentlogi.demo"),
+  metadataBase: new URL("https://rent-logis.vercel.app/"),
   title: "RentLogi | Industrial & Commercial Equipment Rental",
   description:
     "Explore heavy excavators, compact track loaders, aerial work platforms, and mobile power generators. Request fast commercial rental quotes with verified fleet availability.",
