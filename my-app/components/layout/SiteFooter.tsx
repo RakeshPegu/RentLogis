@@ -92,7 +92,7 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link href="/login" className="hover:text-amber-500 transition-colors text-xs text-stone-500">
+                <Link href="/dashboard/overview" className="hover:text-amber-500 transition-colors text-xs text-stone-500">
                   Staff Login &rarr;
                 </Link>
               </li>

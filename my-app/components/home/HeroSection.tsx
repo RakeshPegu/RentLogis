@@ -8,8 +8,9 @@ export function HeroSection() {
         alt="background image of excavator for the hero section"
         fill
         sizes="100vw"
+      
         preload
-        className="object-fill object-center md:scale-y-160"
+        className="object-fill  md:scale-y-170"
       />
       
         <div className="relative z-10 mx-6 md:mx-30 top-20 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
