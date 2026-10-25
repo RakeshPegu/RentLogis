@@ -1,10 +1,18 @@
+import Link from "next/link"
 import Image from "next/image";
-import Link from "next/link";
 export function HeroSection() {
   return (
-    <section className="relative h-min-screen lg:-top-18 w-full backdrop-opacity-300  bg-[url('@/public/images/bg-excavator.jpg')] bg-cover  bg-center bg-no-repeat border-b border-stone-200 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12  lg:my-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+    <section className="relative bottom-10 isolate min-h-screen w-full overflow-hidden border-b border-stone-200" >
+      <Image
+        src="/images/bg-excavator.jpg"
+        alt=""
+        fill
+        sizes="100vw"
+        preload
+        className="object-cover object-center"
+      />
+      
+        <div className="relative z-10 mx-6 md:mx-30 top-20 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Column: Editorial Headline & Actions */}
           <div className="lg:col-span-7 flex flex-col justify-center space-y-6 lg:pr-4">
@@ -66,7 +74,7 @@ export function HeroSection() {
                 </svg>
                 <span className="text-white">Direct Site Transport</span>
               </div>
-            </div>
+            
 
           
 
