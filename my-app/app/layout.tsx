@@ -36,7 +36,7 @@ export const metadata: Metadata = {
       {
         url:'/og-image.jpg',
         width:1200,
-        height:630,
+        height:576,
         alt:'RentLogis site home page'
       }
     ],
@@ -48,7 +48,8 @@ export const metadata: Metadata = {
     title:"RentLogis",
     description:"Explore heavy excavators, compact track loaders, aerial work platforms, and mobile power generators. Request fast commercial rental quotes with verified fleet availability.",
     images:['/og-image.jpg']
-  }
+  },
+  
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
